@@ -24,7 +24,13 @@ e = {'Angry':0,'Suprise':1,'Sad':2,'Neutral':3,'Happy':4,'Fear':5,'Disgust':6}
 s = {0:['a0','a1'],1:['s0','s1'],2:['sa0','sa1'],3:['n0','n1'],4:['h0','h1'],5:['f0','f1'],6:['d0','d1']}
 
 ran = np.floor(np.random.random(1)*2)
+if ran == 0.0:
+	ran = 0
+elif ran == 1.0:
+	ran = 1
 song = s[e[express]][ran]+'.mp3'
+#print(song)
 player = vlc.MediaPlayer(song)
+#player =
 player.play()
-
+input("ctrl+z to exit")
